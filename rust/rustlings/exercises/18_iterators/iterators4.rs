@@ -10,6 +10,13 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+    let mut result = 1;
+    if num == 0 || num == 1 {
+        return result
+    }
+    let nums: std::ops::Range<u64> = 1..num;
+    result = nums.into_iter().rev().fold(num, |a, b| a * b);
+    result
 }
 
 fn main() {
